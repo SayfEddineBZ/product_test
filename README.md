@@ -11,7 +11,7 @@ Product_test
 
 `composer install`
 
-3-Configurer les parametres de la Bases de données:
+3-Création et la configuration de la Bases de données:
 
 `php bin/console doctrine:database:create`
 
@@ -24,14 +24,22 @@ Product_test
 
 5- Création de premier utlisateur:
 
-`php bin/console fos:user create admin admin@admin.com admin`
+`php bin/console fos:user:create admin admin@admin.com admin`
 
 6- Affecter le Role_ADMIN:
 
-php bin/console fos:user:promote admin ROLE_ADMIN
+`php bin/console fos:user:promote admin ROLE_ADMIN`
 
-7- Vous pouvez accéder a la page front a partir de la racine de site `/`
-8-Pour la partie admin vous pouvez accéder depuis `/admin`
+7-Install les assets:
+
+`php bin/console assets:install`
+
+8- Vider le cache:
+
+`php bin/console cache:clear`
+
+9- Vous pouvez accéder a la page front a partir de la racine de site `/`
+10-Pour la partie admin vous pouvez accéder depuis `/admin`
 
 `login: admin`
 
