@@ -10,8 +10,7 @@ class DefaultController extends Controller
     public function indexAction()
     {   $products = $this->getDoctrine()
         ->getRepository(Product::class)
-        ->findAll();
-
+        ->findBy(array(), array('price' => 'ASC'));
 
         return $this->render('@ProductBundle/Default/index.html.twig', [
             'products' => $products,

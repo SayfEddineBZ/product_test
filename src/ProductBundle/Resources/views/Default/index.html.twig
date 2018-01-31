@@ -1,1 +1,55 @@
-{{ dump(products) }}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Liste des produits</title>
+
+    <!-- Bootstrap -->
+    <link href="{{ asset("css/bootstrap.min.css") }}" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="jumbotron text-center">
+    <h1>Liste des produits</h1>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+            <table class="table">
+                <thead>
+                <th>Identifiant</th>
+                <th>Libellé</th>
+                <th>Prix</th>
+                </thead>
+                <tbody>
+                {% for prd in products %}
+                    <tr>
+                        <td>{{ prd.id }}</td>
+                        <td>{{ prd.name }}</td>
+                        <td>{{ prd.price }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
+    </div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="{{ asset("js/bootstrap.min.js") }}"></script>
+</body>
+</html>
